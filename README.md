@@ -12,7 +12,7 @@ The public API for predictions is available at [https://college-predictor-y5es.o
   - `predictions.py`: FastAPI server script that handles prediction requests.
   
 - **Linear_regression**: Contains the Jupyter notebook for model creation.
-  - `model_creation_notebook.ipynb`: Jupyter notebook for training the linear regression model.
+  - `admission.ipynb`: Jupyter notebook for training the linear regression model.
 
 - **Flutter_app**: Contains the Flutter application code.
   - `flutter_app/`: Directory with Flutter app code and configuration.
@@ -32,7 +32,7 @@ cd API
 Requirements
 Ensure you have Python 3.7 or higher installed, and then install the required packages:
 
-```sh
+```bash
 pip install fastapi uvicorn joblib numpy scikit-learn
 ```
 ***Running the Server***
@@ -41,7 +41,7 @@ cd API
 uvicorn predictions:app --reload --host 0.0.0.0 --port 5000
 ```
 
-### 3. 3. Run the Jupyter Notebook
+### 3. Run the Jupyter Notebook
 The Linear_regression directory contains the notebook where the model is created. To run it:
 Install Jupyter if it's not already installed:
 
@@ -58,7 +58,7 @@ jupyter notebook
 ### 4.API USAGE
 
 After running the app locally you can access the api via postman by sending a POST request and a body containing college details at
-http://localhost:5000/predict 
+http://localhost:5000/predict or the deployed version at
 https://college-predictor-y5es.onrender.com/predict
 
 or 
@@ -81,9 +81,9 @@ the body(example)
 
 The API will return a JSON object with the prediction result.
 
-**License**
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
+### License and usage
+This is a free to use app
+This project is licensed under the MIT License. 
 For any questions or issues, please contact Ken.
 
 
