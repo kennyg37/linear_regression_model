@@ -40,7 +40,7 @@ feature_mapping = {
 
 @app.get('/')
 def read_root():
-    return {"Hello welcome to the college admission prediction API, please use the /predict endpoint to make a prediction. or visit the documentation at /docs"}
+    return {"Hello welcome to the college admission prediction API by Ken Ganza, please use the /predict endpoint to make a prediction. or visit the documentation at /docs"}
 
 @app.post('/predict')
 def predict(data: Features):
