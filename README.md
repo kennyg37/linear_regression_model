@@ -15,7 +15,7 @@ The public API for predictions is available at [https://college-predictor-y5es.o
   - `admission.ipynb`: Jupyter notebook for training the linear regression model.
 
 - **Flutter_app**: Contains the Flutter application code.
-  - `flutter_app/`: Directory with Flutter app code and configuration.
+  - `college_flutter/`: Directory with Flutter app code and configuration.
 
 ## Getting Started
 
