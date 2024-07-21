@@ -4,11 +4,20 @@ from pydantic import BaseModel
 import joblib
 import numpy as np
 import uvicorn
+from fastapi.middleware.cors import CORSMiddleware
 
 model = joblib.load('multivariate_model.joblib')
 scaler = joblib.load('multivariate_scaler.joblib')
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
 
 class Features(BaseModel):
     GRE_Score: int
@@ -31,7 +40,7 @@ feature_mapping = {
 
 @app.get('/')
 def read_root():
-    return {"Hello": "World"}
+    return {"Hello World"}
 
 @app.post('/predict')
 def predict(data: Features):
