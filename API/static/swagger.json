@@ -1,0 +1,109 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API to predict college admission chances based on various factors",
+    "version": "1.0.0",
+    "title": "College Admission Prediction API",
+    "contact": {
+      "name": "Ken Ganza"
+    }
+  },
+  "host": "127.0.0.1:5000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/predict": {
+      "post": {
+        "tags": [
+          "Prediction"
+        ],
+        "summary": "Predict admission chances",
+        "description": "This endpoint predicts college admission chances based on input features.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Prediction features",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "GRE_Score": {
+                  "type": "integer",
+                  "example": 320
+                },
+                "TOEFL_Score": {
+                  "type": "integer",
+                  "example": 110
+                },
+                "University_Rating": {
+                  "type": "integer",
+                  "example": 4
+                },
+                "essay_rating": {
+                  "type": "number",
+                  "format": "float",
+                  "example": 4.5
+                },
+                "recommendation_rating": {
+                  "type": "number",
+                  "format": "float",
+                  "example": 4.0
+                },
+                "CGPA": {
+                  "type": "number",
+                  "format": "float",
+                  "example": 9.2
+                },
+                "Research": {
+                  "type": "integer",
+                  "example": 1
+                }
+              },
+              "required": [
+                "GRE_Score",
+                "TOEFL_Score",
+                "University_Rating",
+                "essay_rating",
+                "recommendation_rating",
+                "CGPA",
+                "Research"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful prediction",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "prediction": {
+                  "type": "number",
+                  "format": "float",
+                  "example": 0.85
+                },
+                "prediction_percentage": {
+                  "type": "number",
+                  "format": "float",
+                  "example": 85.0
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
